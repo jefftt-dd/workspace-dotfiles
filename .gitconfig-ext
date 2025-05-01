@@ -1,0 +1,82 @@
+[alias]
+  # add
+  a = "!f() { git add -A; git status; }; f"
+
+  # branch
+	bb = !~/code/rcfiles/scripts/better-git-branch.sh
+	bl = !~/code/rcfiles/scripts/git-branch-list.sh
+
+  new-branch = "!f() { default=$(git rev-parse --abbrev-ref origin/HEAD | cut -c8-) && git checkout $default && git pull-head && git checkout -b jeff.lai/$1 && git branch --edit-description; }; f"
+
+  current-branch = "!f() { branch=$(git rev-parse --abbrev-ref HEAD) && echo $branch | pbcopy && echo $branch; }; f"
+
+  # checkout
+  cob = "!f() { git fetch origin $1 && git checkout $1; }; f"
+
+  # commit
+  fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+  cf = "!f() { git commit -a --fixup=$1; }; f"
+
+  # diff
+  d = diff
+
+  pull-head = "!git fetch origin $(git rev-parse --abbrev-ref HEAD) && git pull origin $(git rev-parse --abbrev-ref HEAD)"
+
+  # log
+  ll = log --oneline
+
+  # status
+  s = status
+
+  # reset
+  reset-remote = "!git fetch origin $(git rev-parse --abbrev-ref HEAD) && git reset --hard @{u}"
+
+  # rebase
+  rebase-latest = "!f() { default=$(git rev-parse --abbrev-ref origin/HEAD | cut -c8-) && git fetch origin $default:$default && git rebase $default; }; f"
+
+  wip = "commit -am 'WIP' --no-verify"
+
+
+
+
+# From: https://blog.gitbutler.com/how-git-core-devs-configure-git/
+
+# clearly makes git better
+
+[column]
+        ui = auto
+[branch]
+        sort = -committerdate
+[tag]
+        sort = version:refname
+[init]
+        defaultBranch = main
+[diff]
+        algorithm = histogram
+        colorMoved = plain
+        mnemonicPrefix = true
+        renames = true
+[push]
+        default = simple
+        autoSetupRemote = true
+        followTags = true
+[fetch]
+        prune = true
+        pruneTags = true
+        all = true
+
+# why the hell not?
+
+[help]
+        autocorrect = prompt
+[commit]
+        verbose = true
+[rerere]
+        enabled = true
+        autoupdate = true
+[core]
+        excludesfile = ~/.gitignore
+[rebase]
+        autoSquash = true
+        autoStash = true
+        updateRefs = true
