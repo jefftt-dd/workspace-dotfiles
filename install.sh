@@ -41,6 +41,11 @@ sudo dpkg -i fd_10.2.0_amd64.deb
 ln -sf $(which fdfind) ~/.local/bin/fd
 rm -f fd_10.2.0_amd64.deb
 
+# https://github.com/sharkdp/bat
+curl -L https://github.com/sharkdp/bat/releases/download/v0.25.0/bat_0.25.0_amd64.deb > bat_0.25.0_amd64.deb
+sudo dpkg -i bat_0.25.0_amd64.deb
+rm -f bat_0.25.0_amd64.deb
+
 # https://github.com/junegunn/fzf
 curl -L https://github.com/junegunn/fzf/releases/download/v0.61.3/fzf-0.61.3-linux_amd64.tar.gz > fzf-0.61.3-linux_amd64.tar.gz
 tar -xvzf fzf-0.61.3-linux_amd64.tar.gz
