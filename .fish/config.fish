@@ -2,9 +2,8 @@
 if status --is-interactive
     set BASE16_SHELL "$HOME/.config/base16-shell/"
     source "$BASE16_SHELL/profile_helper.fish"
+    base16-material # i'd customize this per workspace to help differenciate them
 end
-
-base16-material
 
 set -gx EDITOR nvim
 
