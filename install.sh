@@ -77,4 +77,8 @@ ln -sf ~/.fish/config.fish ~/.config/fish/config.fish
 #### Git
 git config --global include.path "~/.gitconfig-ext"
 
+#### Rust
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
 echo "Success"

@@ -218,7 +218,8 @@ set ffs=unix
 hi MatchParen cterm=none ctermbg=red ctermfg=white
 
 " make pop up menu easier to read
-hi Pmenu ctermbg=white
+hi Pmenu ctermbg=grey
+" hi PmenuSel ctermbg=white
 
 " show whitespace
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<

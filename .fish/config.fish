@@ -14,6 +14,8 @@ source ~/.aliases/common.fish
 source ~/.aliases/ddog.fish
 source ~/.aliases/ddog-libstreaming.fish
 
+# source "$HOME/.cargo/env.fish"
+
 # plugins
 # https://github.com/IlanCosman/tide
 # https://github.com/jethrokuan/z
