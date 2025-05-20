@@ -23,6 +23,7 @@
   pull-head = "!git fetch origin $(git rev-parse --abbrev-ref HEAD) && git pull origin $(git rev-parse --abbrev-ref HEAD)"
 
   # log
+  l = log
   ll = log --oneline
 
   # status
@@ -33,6 +34,7 @@
 
   # rebase
   rebase-latest = "!f() { default=$(git rev-parse --abbrev-ref origin/HEAD | cut -c8-) && git fetch origin $default:$default && git rebase $default; }; f"
+  rebase-remote = "!git fetch origin $(git rev-parse --abbrev-ref HEAD) && git rebase @{u}"
 
   wip = "commit -am 'WIP' --no-verify"
 
