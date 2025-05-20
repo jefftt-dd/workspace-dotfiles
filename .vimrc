@@ -116,6 +116,7 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.gopls.setup {
+    root_dir = vim.fn.getcwd(),
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
