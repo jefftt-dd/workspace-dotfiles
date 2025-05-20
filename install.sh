@@ -52,14 +52,9 @@ tar -xvzf fzf-0.61.3-linux_amd64.tar.gz
 mv fzf ~/.local/bin/fzf
 rm -f fzf-0.61.3-linux_amd64.tar.gz
 
-#### SSH key doesn't seem to be valid at this point and the workspace gitconfig overrides to use SSH. Temporarily disable it so we can clone public git repos
-mv ~/.gitconfig ~/.gitconfig.bak
-
+#### SSH key doesn't seem to be valid at this point and the workspace gitconfig overrides to use SSH. Temporarily override HOME it so we can clone public git repos
 #### Base-16
-git clone http://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-
-# Re-enable workspace gitconfig
-mv ~/.gitconfig.bak ~/.gitconfig
+rm -rf ~/.config/base16-shell && HOME=/foo git clone http://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
 # change default shell
 sudo chsh -s /bin/fish bits
